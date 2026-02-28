@@ -44,11 +44,6 @@ It also includes **Batman AI** — a built-in AI assistant that can solve doubts
 
 ## 🚀 Getting Started
 
---> Online
-Go to this website 
-https://01keshav.github.io/study-trackerr/
-
---> Offline
 ### Option 1 — Online
 1. Website `https://01keshav.github.io/study-trackerr/`
 2. Open it in any browser
