@@ -9,7 +9,7 @@
 ![License](https://img.shields.io/badge/license-MIT-06b6d4?style=for-the-badge)
 ![HTML](https://img.shields.io/badge/HTML-Only-orange?style=for-the-badge&logo=html5&logoColor=white)
 
-**A beautiful, study tracker for Class 11 & 12  students — with a built-in AI Doubt Solver.**
+**A beautiful, study tracker for Class 10 to Graduation students — with a built-in AI Doubt Solver.**
 
 [🌐 Live Demo](#) • [🐛 Report Bug](../../issues) • [✨ Request Feature](../../issues)
 
