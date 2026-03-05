@@ -1,9 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+<meta name="google-site-verification" content="4R4CtipfBA-100wi1HYBeuWjzYxL5I_hYzQlkjIh9q0" />
+<meta name="description" content="A complete 📚 Study tracker for Class 10, 11 & 12 (science, Arts, Commerce)  and Graduation , (B.tech, BCA, BSc, B.com ,BA,BBA) with AI doubt solver (Batman AI). Track everythings subject, semister, progress and more. No signing & installation needed!.">
+<meta name="keywords" content="study traker,checklist,free study traker,study traker for class 10,11,12,graduation,Btech,bca,bsc,roadmap,coadingroadmap,editingroadmap,cybersecurityroadmap,freestudytraker">
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Study Tracker</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="theme-color" content="#04030a">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<title>Study Tracker -by k4hav</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
 <script src="https://cdn.tailwindcss.com"></script>
@@ -53,7 +59,7 @@ body::before{
 
 /* ─── HERO ─── */
 #hero{
-  position:relative;width:100%;height:220px;
+  position:relative;width:100%;height:auto;min-height:260px;
   border-radius:2.5rem;overflow:hidden;
   margin-bottom:2rem;
   border:1px solid var(--border);
@@ -61,10 +67,11 @@ body::before{
 }
 #hero-canvas{position:absolute;inset:0;width:100%;height:100%;}
 #hero-content{
-  position:absolute;inset:0;z-index:10;
+  position:relative;z-index:10;
   display:flex;flex-direction:column;
   align-items:center;justify-content:center;
-  pointer-events:none;gap:.75rem;
+  padding:1.75rem 1.5rem 1.5rem;
+  gap:.6rem;
 }
 #hero-eyebrow{
   font-family:var(--font-ui);font-size:.72rem;font-weight:500;
@@ -90,9 +97,83 @@ body::before{
   color:rgba(232,224,208,.55);letter-spacing:.06em;
 }
 /* gold rule under hero */
-#hero-rule{width:80px;height:1px;background:linear-gradient(90deg,transparent,var(--gold),transparent);margin-top:.25rem;}
+#hero-rule{width:80px;height:1px;background:linear-gradient(90deg,transparent,var(--gold),transparent);margin-top:.1rem;margin-bottom:.35rem;}
 /* edge vignette */
 #hero::after{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 50% 50%,transparent 40%,rgba(4,3,10,.85) 100%);pointer-events:none;z-index:5;}
+
+/* ─── HERO WIDGETS BAR ─── */
+#hero-widgets{
+  display:flex;flex-wrap:wrap;gap:.7rem;justify-content:center;
+  width:100%;margin-top:.3rem;pointer-events:all;position:relative;z-index:20;
+}
+.hw{
+  display:flex;align-items:center;gap:.6rem;
+  padding:.6rem 1.1rem;border-radius:1rem;
+  background:rgba(4,3,10,.6);
+  border:1px solid rgba(201,168,76,.18);
+  backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);
+  font-family:var(--font-ui);color:#fff;
+  transition:border-color .25s,box-shadow .25s,transform .2s;
+  animation:hwSlideIn .6s cubic-bezier(.34,1.56,.64,1) both;
+}
+.hw:nth-child(1){animation-delay:.05s;}
+.hw:nth-child(2){animation-delay:.15s;}
+.hw:nth-child(3){animation-delay:.25s;}
+@keyframes hwSlideIn{from{opacity:0;transform:translateY(12px) scale(.94)}to{opacity:1;transform:none}}
+.hw:hover{border-color:rgba(201,168,76,.4);box-shadow:0 0 18px rgba(201,168,76,.13);transform:translateY(-2px);}
+.hw-icon{font-size:1.1rem;line-height:1;flex-shrink:0;}
+.hw-body{display:flex;flex-direction:column;line-height:1.25;}
+.hw-val{font-size:.95rem;font-weight:700;color:var(--gold);}
+.hw-val.mono{font-family:'Courier New',monospace;letter-spacing:.04em;}
+.hw-lbl{font-size:.6rem;color:rgba(255,255,255,.38);letter-spacing:.09em;text-transform:uppercase;margin-top:.05rem;}
+/* Stopwatch buttons */
+.hw-sw{gap:.55rem;}
+.sw-btns{display:flex;gap:.35rem;align-items:center;margin-left:.15rem;}
+.sw-action{
+  cursor:pointer;
+  border:1px solid rgba(201,168,76,.38);
+  background:rgba(201,168,76,.12);
+  padding:.3rem .7rem;border-radius:.6rem;
+  font-family:var(--font-ui);font-size:.73rem;font-weight:600;
+  color:var(--gold);letter-spacing:.03em;white-space:nowrap;
+  transition:background .18s,box-shadow .18s,border-color .18s;
+  -webkit-tap-highlight-color:transparent;
+}
+.sw-action.running{background:rgba(239,68,68,.2);border-color:rgba(239,68,68,.45);color:#fca5a5;}
+.sw-action:hover{box-shadow:0 0 10px rgba(201,168,76,.22);}
+.sw-reset{
+  cursor:pointer;width:26px;height:26px;
+  display:flex;align-items:center;justify-content:center;
+  border-radius:.5rem;border:1px solid rgba(255,255,255,.1);
+  background:rgba(255,255,255,.05);color:rgba(255,255,255,.38);
+  font-size:.85rem;transition:all .18s;-webkit-tap-highlight-color:transparent;
+}
+.sw-reset:hover{background:rgba(239,68,68,.18);color:#fca5a5;border-color:rgba(239,68,68,.35);}
+/* Stopwatch pulse when running */
+#hw-stopwatch.active .hw-val{
+  animation:swPulse 1s ease-in-out infinite;
+}
+@keyframes swPulse{0%,100%{color:var(--gold);}50%{color:var(--gold-bright);text-shadow:0 0 8px rgba(201,168,76,.6);}}
+/* Quote ticker */
+#hero-quote{
+  font-family:var(--font-ui);font-size:.76rem;
+  color:rgba(232,224,208,.4);letter-spacing:.04em;
+  font-style:italic;text-align:center;max-width:500px;
+  min-height:1.1em;padding:0 1rem;
+  transition:opacity .4s,transform .4s;
+}
+#hero-quote.fade-out{opacity:0;transform:translateY(-5px);}
+#hero-quote.fade-in{opacity:1;transform:none;}
+@media(max-width:640px){
+  #hero{min-height:auto;border-radius:1.5rem;}
+  #hero-content{padding:1.25rem .9rem 1.1rem;}
+  #hero-widgets{gap:.45rem;}
+  .hw{padding:.45rem .75rem;border-radius:.75rem;}
+  .hw-val{font-size:.82rem;}
+  .hw-icon{font-size:.95rem;}
+  #hero-quote{font-size:.68rem;}
+  .sw-action{font-size:.66rem;padding:.26rem .55rem;}
+}
 
 /* ─── NAV TABS ─── */
 .tabs-wrap{
@@ -492,6 +573,75 @@ body[data-theme="rose"]   {--gold:#e879a0;--gold-bright:#f9b8cf;--gold-dim:rgba(
 body[data-theme="cyan"]   {--gold:#06b6d4;--gold-bright:#67e8f9;--gold-dim:rgba(6,182,212,.15);--gold-glow:rgba(6,182,212,.35);--border:rgba(6,182,212,.22);}
 body[data-theme="violet"] {--gold:#8b5cf6;--gold-bright:#c4b5fd;--gold-dim:rgba(139,92,246,.15);--gold-glow:rgba(139,92,246,.35);--border:rgba(139,92,246,.22);}
 body[data-theme="emerald"]{--gold:#10b981;--gold-bright:#6ee7b7;--gold-dim:rgba(16,185,129,.15);--gold-glow:rgba(16,185,129,.35);--border:rgba(16,185,129,.22);}
+
+/* ─── NOTICE BANNER ─── */
+#notice-banner{
+  display:flex;align-items:center;gap:.85rem;
+  padding:.85rem 1.1rem;margin-bottom:1.5rem;
+  border-radius:1.1rem;
+  background:linear-gradient(120deg,rgba(201,168,76,.10) 0%,rgba(99,102,241,.08) 100%);
+  border:1px solid rgba(201,168,76,.28);
+  backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);
+  animation:noticeFadeIn .55s cubic-bezier(.34,1.56,.64,1) both;
+}
+@keyframes noticeFadeIn{from{opacity:0;transform:translateY(-10px)}to{opacity:1;transform:none}}
+#notice-banner.notice-hidden{
+  animation:noticeSlideOut .35s ease forwards;
+  pointer-events:none;
+}
+@keyframes noticeSlideOut{to{opacity:0;max-height:0;padding:0;margin:0;border-width:0;overflow:hidden;}}
+.notice-icon{font-size:1.35rem;flex-shrink:0;line-height:1;}
+.notice-text{flex:1;font-size:.82rem;line-height:1.55;color:var(--text);}
+.notice-text strong{color:var(--gold);font-weight:700;}
+.notice-close{
+  flex-shrink:0;width:28px;height:28px;
+  display:flex;align-items:center;justify-content:center;
+  border-radius:.5rem;border:1px solid rgba(255,255,255,.12);
+  background:rgba(255,255,255,.06);color:rgba(255,255,255,.5);
+  font-size:.85rem;cursor:pointer;
+  transition:background .18s,color .18s,border-color .18s;
+  -webkit-tap-highlight-color:transparent;
+}
+.notice-close:hover,.notice-close:focus{
+  background:rgba(239,68,68,.18);color:#fca5a5;
+  border-color:rgba(239,68,68,.4);outline:none;
+}
+
+/* ─── MOBILE PERFORMANCE FIXES ─── */
+html{-webkit-text-size-adjust:100%;text-size-adjust:100%;}
+body{overflow-x:hidden;-webkit-overflow-scrolling:touch;}
+/* Smoother tap on all interactive elements */
+button,.subject-card,.skill-card,.tab-button,.back-btn,.reset-btn{
+  -webkit-tap-highlight-color:transparent;
+  touch-action:manipulation;
+}
+/* Reduce 3D canvas load on small screens */
+@media(max-width:640px){
+  #bg-3d{opacity:.45 !important;}
+  .main-wrap{padding:1rem .75rem 3rem;}
+  #hero{min-height:150px;border-radius:1.5rem;}
+  #hero-title{font-size:clamp(1.5rem,7vw,2.4rem)!important;}
+  #hero-sub{font-size:.76rem;}
+  .glass,.glass-strong{border-radius:1.1rem;}
+  .tab-button{font-size:.76rem;padding:.45rem .85rem;border-radius:.7rem;}
+  table{font-size:.78rem;}
+  thead th{padding:.5rem .55rem;font-size:.65rem;}
+  tbody td{padding:.4rem .55rem;}
+  .subject-card,.skill-card{padding:1.1rem!important;border-radius:1.2rem!important;}
+  .subject-card .text-5xl{font-size:2rem!important;margin-bottom:.5rem!important;}
+  .back-btn,.reset-btn{font-size:.76rem;padding:.42rem .85rem;}
+  .grid{gap:.7rem!important;}
+  .notice-text{font-size:.76rem;}
+}
+@media(max-width:380px){
+  #hero-title{font-size:1.4rem!important;}
+  .tab-button{font-size:.68rem;padding:.38rem .7rem;}
+}
+/* Respect user's reduced-motion preference */
+@media(prefers-reduced-motion:reduce){
+  *{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important;}
+  #bg-3d{display:none;}
+}
 </style>
 </head>
 <body data-theme="gold">
@@ -512,6 +662,44 @@ body[data-theme="emerald"]{--gold:#10b981;--gold-bright:#6ee7b7;--gold-dim:rgba(
       <div id="hero-title">📚 <span>Study</span> Tracker</div>
       <div id="hero-sub">Track · Learn · Excel — Class 10 to Graduation</div>
       <div id="hero-rule"></div>
+
+      <!-- HERO WIDGETS — 3 clean cards -->
+      <div id="hero-widgets">
+
+        <!-- Stopwatch -->
+        <div class="hw hw-sw" id="hw-stopwatch">
+          <span class="hw-icon">⏱️</span>
+          <div class="hw-body">
+            <span class="hw-val mono" id="sw-display">00:00:00</span>
+            <span class="hw-lbl">Stopwatch</span>
+          </div>
+          <div class="sw-btns">
+            <button id="sw-btn" class="sw-action" onclick="swToggle()">▶ Start</button>
+            <button class="sw-reset" onclick="swReset()" title="Reset">↺</button>
+          </div>
+        </div>
+
+        <!-- Today's Study Time -->
+        <div class="hw">
+          <span class="hw-icon">📖</span>
+          <div class="hw-body">
+            <span class="hw-val" id="hw-today">0h 00m</span>
+            <span class="hw-lbl">Today's Study</span>
+          </div>
+        </div>
+
+        <!-- Live Clock + Date -->
+        <div class="hw">
+          <span class="hw-icon">🕐</span>
+          <div class="hw-body">
+            <span class="hw-val mono" id="hw-clock">--:--</span>
+            <span class="hw-lbl" id="hw-date">Loading…</span>
+          </div>
+        </div>
+
+      </div>
+      <!-- Motivational Quote -->
+      <div id="hero-quote"></div>
     </div>
   </div>
 
@@ -538,6 +726,16 @@ body[data-theme="emerald"]{--gold:#10b981;--gold-bright:#6ee7b7;--gold-dim:rgba(
         </div>
 
         <!-- Welcome Cards -->
+        <!-- ── NOTICE BANNER ── -->
+        <div id="notice-banner" role="alert" aria-live="polite">
+            <span class="notice-icon">🔒</span>
+            <p class="notice-text">
+                <strong>Your progress is always safe.</strong>
+                All your study progress is automatically saved in your browser's local storage — it will persist through page refreshes, tab closes, and restarts. No account needed.
+            </p>
+            <button class="notice-close" onclick="dismissNotice()" aria-label="Dismiss notice" title="Dismiss">✕</button>
+        </div>
+
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
             <div onclick="showPage('page-tenth', null)" class="subject-card glass-strong rounded-2xl p-6 text-center">
                 <div class="text-5xl mb-4">🏫</div>
@@ -2467,6 +2665,8 @@ body[data-theme="emerald"]{--gold:#10b981;--gold-bright:#6ee7b7;--gold-dim:rgba(
     let currentStream = null;
     let currentSubject = null;
     let currentStreamKey = null; // track exact stream key for adv pyq
+    let currentTenthKey = null;  // tracks active 10th subject key
+    let currentTenthCount = 0;   // tracks chapter count for active 10th subject
 
     function showPage(pageId, data) {
         document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
@@ -2524,6 +2724,9 @@ body[data-theme="emerald"]{--gold:#10b981;--gold-bright:#6ee7b7;--gold-dim:rgba(
     function loadTenthChaptersPage(subjectKey) {
         const meta = tenthSubjectMeta[subjectKey];
         const chaps = tenthChapters[subjectKey];
+        // Track current 10th subject for live progress updates
+        currentTenthKey = subjectKey;
+        currentTenthCount = chaps.length;
         document.getElementById('tenth-chapter-title').textContent = `${meta.emoji} ${meta.label} — Class 10th`;
         const content = document.getElementById('tenth-chapter-content');
         content.innerHTML = '';
@@ -2555,15 +2758,33 @@ body[data-theme="emerald"]{--gold:#10b981;--gold-bright:#6ee7b7;--gold-dim:rgba(
             const tr = document.createElement('tr');
             tr.innerHTML = `
                 <td class="p-3 text-sm">${ch}</td>
-                <td class="text-center p-3"><input type="checkbox" class="checkbox-custom" id="${storePfx}-${idx}-theory" onchange="saveProgress('${storePfx}-${idx}-theory', this.checked)"></td>
-                <td class="text-center p-3"><input type="checkbox" class="checkbox-custom" id="${storePfx}-${idx}-revision" onchange="saveProgress('${storePfx}-${idx}-revision', this.checked)"></td>
-                <td class="text-center p-3"><input type="checkbox" class="checkbox-custom" id="${storePfx}-${idx}-pyq" onchange="saveProgress('${storePfx}-${idx}-pyq', this.checked)"></td>
+                <td class="text-center p-3"><input type="checkbox" class="checkbox-custom" id="${storePfx}-${idx}-theory"   onchange="saveProgress('${storePfx}-${idx}-theory',   this.checked); updateTenthProgress()"></td>
+                <td class="text-center p-3"><input type="checkbox" class="checkbox-custom" id="${storePfx}-${idx}-revision" onchange="saveProgress('${storePfx}-${idx}-revision', this.checked); updateTenthProgress()"></td>
+                <td class="text-center p-3"><input type="checkbox" class="checkbox-custom" id="${storePfx}-${idx}-pyq"      onchange="saveProgress('${storePfx}-${idx}-pyq',      this.checked); updateTenthProgress()"></td>
             `;
             tbody.appendChild(tr);
         });
         loadProgress();
-        updateProgressBar(storePfx, chaps.length, ['theory','revision','pyq']);
         showPage('page-tenth-chapters', null);
+    }
+
+    function updateTenthProgress() {
+        if (!currentTenthKey) return;
+        const storePfx = `10th-${currentTenthKey}`;
+        const types = ['theory','revision','pyq'];
+        const total = currentTenthCount * types.length;
+        let checked = 0;
+        for (let i = 0; i < currentTenthCount; i++) {
+            types.forEach(t => {
+                const cb = document.getElementById(`${storePfx}-${i}-${t}`);
+                if (cb && cb.checked) checked++;
+            });
+        }
+        const pct = total > 0 ? Math.round((checked / total) * 100) : 0;
+        const pctEl = document.getElementById(`${storePfx}-progress`);
+        const barEl = document.getElementById(`${storePfx}-bar`);
+        if (pctEl) pctEl.textContent = `${pct}%`;
+        if (barEl) barEl.style.width = `${pct}%`;
     }
 
     /* ─── GRADUATION PAGES ─── */
@@ -2964,6 +3185,7 @@ body[data-theme="emerald"]{--gold:#10b981;--gold-bright:#6ee7b7;--gold-dim:rgba(
             if (cb) cb.checked = data[id];
         });
         updateProgressForCurrent();
+        updateTenthProgress();
     }
 
     function updateProgressForCurrent() {
@@ -2995,6 +3217,16 @@ body[data-theme="emerald"]{--gold:#10b981;--gold-bright:#6ee7b7;--gold-dim:rgba(
             updateProgressForCurrent();
         }
     }
+
+    /* ─── NOTICE BANNER ─── */
+    function dismissNotice() {
+        const banner = document.getElementById('notice-banner');
+        if (!banner) return;
+        banner.classList.add('notice-hidden');
+        setTimeout(() => { banner.style.display = 'none'; }, 380);
+        // NOTE: deliberately NOT saving to localStorage — shows every refresh as requested
+    }
+    // No auto-hide on reload — always visible fresh each session
 
     const roadmapsStatic = {
         video: {
@@ -4601,6 +4833,354 @@ Be warm, encouraging, and use emojis occasionally. Made for K4hav Study Tracker.
 
 })(); // end main IIFE
 
+
+
+/* ══════════════════════════════════════════
+   ANIMATED FAVICON — Epic Glowing K
+══════════════════════════════════════════ */
+(function(){
+  var S=64; // canvas size
+  var fav=document.createElement('canvas');
+  fav.width=fav.height=S;
+  var fc=fav.getContext('2d');
+  var link=document.querySelector("link[rel*='icon']");
+  if(!link){link=document.createElement('link');link.rel='icon';link.type='image/x-icon';document.head.appendChild(link);}
+
+  var t=0;
+
+  // Sparks / particles
+  var sparks=[];
+  for(var i=0;i<22;i++){
+    sparks.push({
+      x:32, y:32,
+      vx:(Math.random()-0.5)*2.2,
+      vy:(Math.random()-0.5)*2.2,
+      life:Math.random(),
+      maxLife:0.6+Math.random()*0.7,
+      size:0.8+Math.random()*1.6,
+      hue: 35+Math.random()*25
+    });
+  }
+
+  function tickSparks(){
+    sparks.forEach(function(p){
+      p.life+=0.022+Math.random()*0.012;
+      if(p.life>p.maxLife){
+        // respawn from K stroke area
+        var spawnPts=[
+          {x:18,y:18},{x:18,y:28},{x:18,y:38},{x:18,y:48},
+          {x:24,y:32},{x:30,y:22},{x:36,y:14},{x:30,y:42},{x:36,y:50}
+        ];
+        var sp=spawnPts[Math.floor(Math.random()*spawnPts.length)];
+        p.x=sp.x+(Math.random()-0.5)*4;
+        p.y=sp.y+(Math.random()-0.5)*4;
+        p.vx=(Math.random()-0.5)*2.8;
+        p.vy=(Math.random()-0.5)*2.8-0.4;
+        p.life=0; p.maxLife=0.5+Math.random()*0.6;
+        p.size=0.7+Math.random()*1.8;
+        p.hue=35+Math.random()*30;
+      }
+      p.x+=p.vx*0.6;
+      p.y+=p.vy*0.6;
+    });
+  }
+
+  function draw(){
+    fc.clearRect(0,0,S,S);
+    t+=0.045;
+
+    var cx=S/2, cy=S/2;
+
+    // ── Deep background circle ──
+    var bg=fc.createRadialGradient(cx,cy,2,cx,cy,29);
+    bg.addColorStop(0,'rgba(30,20,4,0.95)');
+    bg.addColorStop(0.6,'rgba(18,12,2,0.9)');
+    bg.addColorStop(1,'rgba(4,3,10,0)');
+    fc.beginPath(); fc.arc(cx,cy,28,0,Math.PI*2);
+    fc.fillStyle=bg; fc.fill();
+
+    // ── Outer rotating glow ring ──
+    var ringAlpha=0.18+Math.sin(t*1.1)*0.1;
+    fc.beginPath(); fc.arc(cx,cy,26,0,Math.PI*2);
+    fc.strokeStyle='rgba(201,168,76,'+ringAlpha.toFixed(3)+')';
+    fc.lineWidth=1.2; fc.stroke();
+
+    // ── Rotating arc sweep ──
+    var arcStart=t*1.6;
+    var arcLen=Math.PI*0.55+Math.sin(t*0.7)*0.25;
+    fc.beginPath();
+    fc.arc(cx,cy,26,arcStart,arcStart+arcLen);
+    var arcGrd=fc.createLinearGradient(
+      cx+Math.cos(arcStart)*26, cy+Math.sin(arcStart)*26,
+      cx+Math.cos(arcStart+arcLen)*26, cy+Math.sin(arcStart+arcLen)*26
+    );
+    arcGrd.addColorStop(0,'rgba(253,230,138,0)');
+    arcGrd.addColorStop(0.5,'rgba(253,230,138,0.9)');
+    arcGrd.addColorStop(1,'rgba(253,230,138,0)');
+    fc.strokeStyle=arcGrd; fc.lineWidth=2.2; fc.stroke();
+
+    // ── Second shorter arc (opposite) ──
+    var arc2Start=arcStart+Math.PI+0.4;
+    fc.beginPath();
+    fc.arc(cx,cy,26,arc2Start,arc2Start+Math.PI*0.3);
+    var a2=fc.createLinearGradient(
+      cx+Math.cos(arc2Start)*26, cy+Math.sin(arc2Start)*26,
+      cx+Math.cos(arc2Start+Math.PI*0.3)*26, cy+Math.sin(arc2Start+Math.PI*0.3)*26
+    );
+    a2.addColorStop(0,'rgba(201,168,76,0)');
+    a2.addColorStop(0.5,'rgba(201,168,76,0.55)');
+    a2.addColorStop(1,'rgba(201,168,76,0)');
+    fc.strokeStyle=a2; fc.lineWidth=1.4; fc.stroke();
+
+    // ── Sparks ──
+    tickSparks();
+    sparks.forEach(function(p){
+      var prog=p.life/p.maxLife;
+      var alpha=(1-prog)*0.85;
+      if(alpha<0.02)return;
+      fc.beginPath();
+      fc.arc(p.x, p.y, p.size*(1-prog*0.5), 0, Math.PI*2);
+      fc.fillStyle='hsla('+p.hue+',90%,70%,'+alpha.toFixed(3)+')';
+      if(prog<0.3){fc.shadowColor='rgba(253,230,138,0.8)';fc.shadowBlur=4;}
+      fc.fill(); fc.shadowBlur=0;
+    });
+
+    // ── Pulsing glow under K ──
+    var glow=0.32+Math.sin(t*2.2)*0.18;
+    var kg=fc.createRadialGradient(cx,cy,2,cx,cy,18);
+    kg.addColorStop(0,'rgba(201,168,76,'+glow.toFixed(3)+')');
+    kg.addColorStop(1,'rgba(201,168,76,0)');
+    fc.fillStyle=kg; fc.fillRect(cx-18,cy-18,36,36);
+
+    // ── THE "K" — bold, crisp, glowing ──
+    // Color cycles: gold → bright white-gold → gold
+    var colorPulse=0.5+Math.sin(t*1.8)*0.5; // 0→1
+    // interpolate: gold #c9a84c → bright #fff8d6
+    var r=Math.round(201+colorPulse*54);
+    var g=Math.round(168+colorPulse*80);
+    var b=Math.round(76+colorPulse*158);
+    var kColor='rgb('+r+','+g+','+b+')';
+
+    // Shadow/glow layers (paint back to front)
+    var glowLayers=[
+      {blur:14, alpha:0.35+colorPulse*0.2},
+      {blur:7,  alpha:0.55+colorPulse*0.15},
+      {blur:3,  alpha:0.8},
+    ];
+    glowLayers.forEach(function(gl){
+      fc.save();
+      fc.shadowColor='rgba('+r+','+g+','+b+','+gl.alpha.toFixed(2)+')';
+      fc.shadowBlur=gl.blur;
+      drawK(fc, cx, cy, kColor, 1);
+      fc.restore();
+    });
+    // Final crisp K on top
+    drawK(fc, cx, cy, kColor, 1);
+
+    link.href=fav.toDataURL('image/png');
+  }
+
+  function drawK(ctx, cx, cy, color, alpha){
+    // K drawn as thick strokes for clarity at small sizes
+    ctx.save();
+    ctx.globalAlpha=alpha;
+    ctx.strokeStyle=color;
+    ctx.lineCap='round';
+    ctx.lineJoin='round';
+
+    var x=cx-8, top=cy-16, bot=cy+16, mid=cy;
+    var sw=5.5; // stroke width
+
+    // Vertical bar of K
+    ctx.lineWidth=sw;
+    ctx.beginPath();
+    ctx.moveTo(x, top);
+    ctx.lineTo(x, bot);
+    ctx.stroke();
+
+    // Upper arm of K (goes from mid-top-right)
+    ctx.lineWidth=sw-0.5;
+    ctx.beginPath();
+    ctx.moveTo(x+2, mid);
+    ctx.lineTo(cx+12, top+2);
+    ctx.stroke();
+
+    // Lower arm of K (goes from mid-bottom-right)
+    ctx.beginPath();
+    ctx.moveTo(x+2, mid);
+    ctx.lineTo(cx+12, bot-2);
+    ctx.stroke();
+
+    ctx.restore();
+  }
+
+  // 30fps
+  setInterval(draw, 33);
+})();
+
+
+/* ══════════════════════════════════════════
+   HERO WIDGETS — Stopwatch · Today Study · Clock · Quote
+══════════════════════════════════════════ */
+(function(){
+  /* ── Quotes ── */
+  var quotes=[
+    "Success is the sum of small efforts, repeated day in and day out.",
+    "The secret of getting ahead is getting started.",
+    "Don't watch the clock; do what it does — keep going.",
+    "Push yourself, because no one else is going to do it for you.",
+    "Great things never come from comfort zones.",
+    "The beautiful thing about learning is that no one can take it away from you.",
+    "An investment in knowledge pays the best interest.",
+    "Consistency is more important than perfection.",
+    "Work hard in silence; let your results be your noise.",
+    "Education is not preparation for life — it is life itself.",
+  ];
+  var qi=Math.floor(Math.random()*quotes.length);
+  var qEl=document.getElementById('hero-quote');
+  function setQuote(q){
+    if(!qEl)return;
+    qEl.classList.add('fade-out');
+    setTimeout(function(){
+      qEl.textContent='"'+q+'"';
+      qEl.classList.remove('fade-out');
+      qEl.classList.add('fade-in');
+      setTimeout(function(){qEl.classList.remove('fade-in');},500);
+    },400);
+  }
+  if(qEl){qEl.textContent='"'+quotes[qi]+'"';}
+  setInterval(function(){
+    qi=(qi+1)%quotes.length; setQuote(quotes[qi]);
+  },10000);
+
+  /* ── Live Clock ── */
+  function updateClock(){
+    var now=new Date();
+    var h=now.getHours(),m=now.getMinutes();
+    var ap=h>=12?'PM':'AM'; h=h%12||12;
+    var clk=document.getElementById('hw-clock');
+    var dt=document.getElementById('hw-date');
+    if(clk) clk.textContent=h+':'+(m<10?'0':'')+m+' '+ap;
+    if(dt){
+      var days=['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
+      var mo=['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+      var d=now; dt.textContent=days[d.getDay()]+', '+d.getDate()+' '+mo[d.getMonth()];
+    }
+  }
+  updateClock(); setInterval(updateClock,10000);
+
+  /* ── Today Study Time ── */
+  var TKEY='k4hav-studytime';
+  function getTD(){try{return JSON.parse(localStorage.getItem(TKEY)||'{}');}catch(e){return{};}}
+  function saveD(d){try{localStorage.setItem(TKEY,JSON.stringify(d));}catch(e){}}
+  function fmtHM(s){
+    var h=Math.floor(s/3600),m=Math.floor((s%3600)/60);
+    return h+'h '+(m<10?'0':'')+m+'m';
+  }
+  function showToday(){
+    var d=getD(); var today=new Date().toDateString();
+    var el=document.getElementById('hw-today');
+    if(el) el.textContent=fmtHM(d[today]||0);
+  }
+  function getD(){return getD._d||(getD._d=getTD()); }
+  // fresh every call
+  function getTodaySecs(){var d=getTD();return d[new Date().toDateString()]||0;}
+  function addSecs(s){
+    var d=getTD(); var today=new Date().toDateString();
+    d[today]=(d[today]||0)+s; saveD(d);
+    var el=document.getElementById('hw-today');
+    if(el) el.textContent=fmtHM(d[today]);
+  }
+  // Init display
+  (function(){
+    var d=getTD(); var today=new Date().toDateString();
+    var el=document.getElementById('hw-today');
+    if(el) el.textContent=fmtHM(d[today]||0);
+  })();
+
+  /* ── Stopwatch ── */
+  // swAccum = total ms accumulated before last start
+  // swStart = timestamp of last Start click
+  // We NEVER reset swAccum except on explicit Reset click
+  var swRunning=false, swStart=0, swAccum=0, swRaf=null;
+  var swEl=document.getElementById('sw-display');
+  var swBtn=document.getElementById('sw-btn');
+  var swHw=document.getElementById('hw-stopwatch');
+
+  function fmtSW(ms){
+    var tot=Math.floor(ms/1000);
+    var h=Math.floor(tot/3600),m=Math.floor((tot%3600)/60),s=tot%60;
+    return (h<10?'0':'')+h+':'+(m<10?'0':'')+m+':'+(s<10?'0':'')+s;
+  }
+  function swTick(){
+    if(!swRunning)return;
+    // elapsed = all past accumulated + current running duration
+    var elapsed=swAccum+(Date.now()-swStart);
+    if(swEl) swEl.textContent=fmtSW(elapsed);
+    swRaf=requestAnimationFrame(swTick);
+  }
+
+  window.swToggle=function(){
+    if(!swRunning){
+      // START
+      swRunning=true;
+      swStart=Date.now();
+      if(swBtn){swBtn.textContent='⏸ Pause';swBtn.classList.add('running');}
+      if(swHw) swHw.classList.add('active');
+      swTick();
+    } else {
+      // PAUSE — add elapsed to accumulator, DO NOT reset swAccum
+      swRunning=false;
+      var now=Date.now();
+      var sessionMs=now-swStart;
+      swAccum+=sessionMs; // accumulate, never reset
+      cancelAnimationFrame(swRaf);
+      if(swBtn){swBtn.textContent='▶ Resume';swBtn.classList.remove('running');}
+      if(swHw) swHw.classList.remove('active');
+      // Save session seconds to today's study time
+      addSecs(Math.floor(sessionMs/1000));
+    }
+  };
+
+  window.swReset=function(){
+    swRunning=false;
+    swAccum=0; // ONLY place swAccum is reset
+    cancelAnimationFrame(swRaf);
+    if(swEl) swEl.textContent='00:00:00';
+    if(swBtn){swBtn.textContent='▶ Start';swBtn.classList.remove('running');}
+    if(swHw) swHw.classList.remove('active');
+  };
+
+  // Auto-save every 60s if running (NO swAccum reset — just snapshot and save delta)
+  var swLastSaved=0;
+  setInterval(function(){
+    if(!swRunning)return;
+    var now=Date.now();
+    var deltaSecs=Math.floor((now-swStart-swLastSaved)/1000);
+    if(deltaSecs>0){
+      swLastSaved=now-swStart;
+      addSecs(deltaSecs);
+    }
+  },60000);
+
+  // Reset lastSaved on each new start
+  var _origToggle=window.swToggle;
+  window.swToggle=function(){
+    if(!swRunning) swLastSaved=0;
+    _origToggle();
+  };
+
+  // Save on page hide
+  document.addEventListener('visibilitychange',function(){
+    if(document.hidden&&swRunning){
+      var sessionMs=Date.now()-swStart;
+      swAccum+=sessionMs;
+      swStart=Date.now();
+      swLastSaved=0;
+      addSecs(Math.floor(sessionMs/1000));
+    }
+  });
+})();
 
 
 </script>
