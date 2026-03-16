@@ -980,55 +980,56 @@ button,.subject-card,.skill-card,.tab-button,.back-btn,.reset-btn{
 
         <!-- Welcome Cards -->
         <!-- ── MIGRATION NOTICE ── -->
-        <div id="migrate-banner" role="alert" style="margin-bottom:.85rem;border-radius:1.2rem;background:linear-gradient(135deg,rgba(79,70,229,.16) 0%,rgba(124,58,237,.12) 60%,rgba(99,102,241,.08) 100%);border:1px solid rgba(99,102,241,.42);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);animation:noticeFadeIn .6s cubic-bezier(.34,1.56,.64,1) .08s both;overflow:hidden;">
+        <!-- ── PLAN TODAY BANNER ── -->
+        <div id="plan-today-banner" role="complementary" style="margin-bottom:.85rem;border-radius:1.2rem;background:linear-gradient(135deg,rgba(16,185,129,.13) 0%,rgba(5,150,105,.10) 50%,rgba(245,158,11,.08) 100%);border:1px solid rgba(16,185,129,.38);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);animation:noticeFadeIn .6s cubic-bezier(.34,1.56,.64,1) .08s both;overflow:hidden;">
 
           <!-- Top strip -->
-          <div style="display:flex;align-items:center;gap:.7rem;padding:.85rem 1.1rem .6rem;border-bottom:1px solid rgba(99,102,241,.18);">
-            <span style="font-size:1.4rem;flex-shrink:0;">🚀</span>
+          <div style="display:flex;align-items:center;gap:.7rem;padding:.85rem 1.1rem .6rem;border-bottom:1px solid rgba(16,185,129,.18);">
+            <span style="font-size:1.4rem;flex-shrink:0;">🗓️</span>
             <div style="flex:1;">
-              <div style="font-weight:800;color:#c7d2fe;font-size:.88rem;letter-spacing:.01em;">We've moved to a new home!</div>
-              <div style="font-size:.73rem;color:rgba(165,180,252,.6);margin-top:.08rem;">Please read below — it's quick</div>
+              <div style="font-weight:800;color:#6ee7b7;font-size:.88rem;letter-spacing:.01em;">Meet your new study buddy — <em style="font-style:normal;color:#fde68a;">Plan Today!</em> ✨</div>
+              <div style="font-size:.73rem;color:rgba(110,231,183,.55);margin-top:.08rem;">Plan your day, crush your goals 🚀</div>
             </div>
-            <button onclick="document.getElementById('migrate-banner').classList.add('notice-hidden');setTimeout(()=>{document.getElementById('migrate-banner').style.display='none';},380);" aria-label="Dismiss" title="Dismiss"
+            <button onclick="document.getElementById('plan-today-banner').classList.add('notice-hidden');setTimeout(()=>{document.getElementById('plan-today-banner').style.display='none';},380);" aria-label="Dismiss" title="Dismiss"
               style="flex-shrink:0;width:28px;height:28px;display:flex;align-items:center;justify-content:center;border-radius:.5rem;border:1px solid rgba(255,255,255,.1);background:rgba(255,255,255,.05);color:rgba(255,255,255,.35);font-size:.78rem;cursor:pointer;transition:all .18s;-webkit-tap-highlight-color:transparent;"
               onmouseover="this.style.background='rgba(239,68,68,.22)';this.style.color='#fca5a5';this.style.borderColor='rgba(239,68,68,.35)'"
               onmouseout="this.style.background='rgba(255,255,255,.05)';this.style.color='rgba(255,255,255,.35)';this.style.borderColor='rgba(255,255,255,.1)'">✕</button>
           </div>
 
           <!-- Body -->
-          <div style="padding:.75rem 1.1rem 1rem;font-size:.81rem;line-height:1.7;color:rgba(224,218,255,.75);">
+          <div style="padding:.75rem 1.1rem 1rem;font-size:.81rem;line-height:1.7;color:rgba(209,250,229,.75);">
 
-            <!-- Step 1: Save progress -->
+            <!-- Feature 1 -->
             <div style="display:flex;gap:.55rem;margin-bottom:.5rem;align-items:flex-start;">
-              <span style="font-size:1rem;flex-shrink:0;margin-top:.05rem;">💾</span>
-              <div><strong style="color:#c7d2fe;">Step 1 — Save your progress first.</strong>
-              Before moving , open the old GitHub link and take a quick screenshot of your progress — or note it down. <em style="color:rgba(165,180,252,.55);">(Sorry for the inconvenience — we truly appreciate your patience! 🙏)</em></div>
+              <span style="font-size:1rem;flex-shrink:0;margin-top:.05rem;">📋</span>
+              <div><strong style="color:#6ee7b7;">Plan your entire day in seconds.</strong>
+              Not just studies — organize everything you need to do in one place. Write it down, check it off, and stay on top of your day! 💪</div>
             </div>
 
-            <!-- Step 2: Move when ready -->
+            <!-- Feature 2 -->
             <div style="display:flex;gap:.55rem;margin-bottom:.5rem;align-items:flex-start;">
-              <span style="font-size:1rem;flex-shrink:0;margin-top:.05rem;">⏰</span>
-              <div><strong style="color:#c7d2fe;">No rush — move when you're ready.</strong>
-              The old GitHub link <code style="background:rgba(255,255,255,.08);padding:.1rem .3rem;border-radius:.3rem;font-size:.73rem;color:rgba(165,180,252,.65);">01keshav.github.io/study-trackerr</code> is <strong style="color:#86efac;">still active and will stay forever.</strong> You can switch whenever you have extra time.</div>
+              <span style="font-size:1rem;flex-shrink:0;margin-top:.05rem;">⚡</span>
+              <div><strong style="color:#6ee7b7;">The perfect partner for Study Tracker.</strong>
+              Build your daily schedule on <em style="color:#fde68a;">Plan Today</em>, then come here to track your chapters. Together, these two will make you unstoppable! 🔥</div>
             </div>
 
-            <!-- Why move -->
+            <!-- Feature 3 -->
             <div style="display:flex;gap:.55rem;margin-bottom:.7rem;align-items:flex-start;">
-              <span style="font-size:1rem;flex-shrink:0;margin-top:.05rem;">✨</span>
-              <div><strong style="color:#c7d2fe;">Why move?</strong>
-              The new link is faster, gets all upcoming features first, and is our primary home going forward. All new updates, fixes, and features will be here.</div>
+              <span style="font-size:1rem;flex-shrink:0;margin-top:.05rem;">🎯</span>
+              <div><strong style="color:#6ee7b7;">Free, fast and awesome.</strong>
+              No login, no signup — just open it and start planning your day. Try it once and you won't be able to stop! 😄</div>
             </div>
 
             <!-- CTA button -->
             <div style="display:flex;flex-wrap:wrap;align-items:center;gap:.65rem;">
-              <a href="https://study-trackerr.vercel.app/" target="_blank" rel="noopener"
-                 style="display:inline-flex;align-items:center;gap:.4rem;padding:.42rem 1rem;border-radius:.65rem;background:linear-gradient(135deg,rgba(99,102,241,.32),rgba(79,70,229,.2));border:1px solid rgba(99,102,241,.55);color:#c7d2fe;font-weight:700;font-size:.8rem;text-decoration:none;transition:all .22s;letter-spacing:.01em;white-space:nowrap;"
-                 onmouseover="this.style.boxShadow='0 0 18px rgba(99,102,241,.45)';this.style.background='linear-gradient(135deg,rgba(99,102,241,.48),rgba(79,70,229,.32))'"
-                 onmouseout="this.style.boxShadow='none';this.style.background='linear-gradient(135deg,rgba(99,102,241,.32),rgba(79,70,229,.2))'">
+              <a href="https://k4hav.github.io/plan-today/" target="_blank" rel="noopener"
+                 style="display:inline-flex;align-items:center;gap:.4rem;padding:.42rem 1rem;border-radius:.65rem;background:linear-gradient(135deg,rgba(16,185,129,.32),rgba(5,150,105,.2));border:1px solid rgba(16,185,129,.55);color:#6ee7b7;font-weight:700;font-size:.8rem;text-decoration:none;transition:all .22s;letter-spacing:.01em;white-space:nowrap;"
+                 onmouseover="this.style.boxShadow='0 0 18px rgba(16,185,129,.45)';this.style.background='linear-gradient(135deg,rgba(16,185,129,.48),rgba(5,150,105,.32))'"
+                 onmouseout="this.style.boxShadow='none';this.style.background='linear-gradient(135deg,rgba(16,185,129,.32),rgba(5,150,105,.2))'">
                 <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
-                👉 study-trackerr.vercel.app
+                🗓️ k4hav.github.io/plan-today
               </a>
-              <span style="font-size:.74rem;color:rgba(165,180,252,.45);font-style:italic;">← Visit new link when you're ready</span>
+              <span style="font-size:.74rem;color:rgba(110,231,183,.45);font-style:italic;">← Plan your today! 🌟</span>
             </div>
           </div>
         </div>
@@ -1080,10 +1081,6 @@ button,.subject-card,.skill-card,.tab-button,.back-btn,.reset-btn{
         <div class="text-center mb-4">
             <button onclick="resetProgress()" class="reset-btn glass-strong rounded-xl px-6 py-3 text-white font-semibold hover:bg-red-500"><span class="btn-label">🔄 Reset All Progress</span><span class="btn-hover-label">🔄 Reset All Progress</span><span class="btn-fill"></span></button>
         </div>
-
-        <footer style="text-align:center;padding:1.5rem 1rem 1rem;margin-top:2.5rem;border-top:1px solid var(--border-dim);font-family:'Outfit',sans-serif;font-size:.78rem;letter-spacing:.06em;color:var(--text-dim);">
-          Copyright 2026 ƘҽՏհɑѵ. All Rights Reserved.
-        </footer>
     </div>
 
     <!-- ==================== PAGE: 10th / MATRICULATION ==================== -->
@@ -1589,7 +1586,7 @@ button,.subject-card,.skill-card,.tab-button,.back-btn,.reset-btn{
                 <div class="glass-strong rounded-2xl inline-block" style="padding:1rem;border:1px solid var(--border);">
                     <div id="upi-qr">
                         <div style="background:#fff;border-radius:12px;padding:8px;display:inline-block;">
-                            <img src="https://res.cloudinary.com/dui2zd49s/image/upload/v1771818839/be4a5f29-f251-497a-a334-04fe026d16e8_dlzvln.jpg" width="200" height="200" style="border-radius:8px;display:block;" alt="UPI QR"/>
+                            <img src="https://res.cloudinary.com/dui2zd49s/image/upload/f_webp,q_auto/v1771818839/be4a5f29-f251-497a-a334-04fe026d16e8_dlzvln.jpg" width="200" height="200" loading="lazy" decoding="async" style="border-radius:8px;display:block;" alt="UPI QR"/>
                         </div>
                     </div>
                     <p style="font-size:.72rem;color:var(--text-dim);margin-top:.5rem;">Scan with any UPI app</p>
@@ -1620,6 +1617,7 @@ button,.subject-card,.skill-card,.tab-button,.back-btn,.reset-btn{
             <button id="ai-chat-btn" title="Open Batman AI">
                 <img src="https://imgs.search.brave.com/qbR0ALWfLL_OWqCoE0JqRgqyIHVGpI-ja2pXrDlFId4/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9tLmdl/dHR5d2FsbHBhcGVy/cy5jb20vd3AtY29u/dGVudC91cGxvYWRz/LzIwMjMvMTAvQ2Fy/dG9vbi1CYXRtYW4t/UHJvZmlsZS1QaWN0/dXJlLmpwZw"
                      alt="Batman AI"
+                     loading="lazy" decoding="async"
                      style="width:100%;height:100%;object-fit:cover;border-radius:50%;display:block;"/>
                 <div class="notif" id="ai-notif">1</div>
             </button>
@@ -3898,8 +3896,8 @@ button,.subject-card,.skill-card,.tab-button,.back-btn,.reset-btn{
         if (!qrDiv) return;
         qrDiv.innerHTML = `
             <div style="background:#fff;border-radius:12px;padding:8px;display:inline-block;">
-                <img src="https://res.cloudinary.com/dui2zd49s/image/upload/v1771818839/be4a5f29-f251-497a-a334-04fe026d16e8_dlzvln.jpg"
-                     width="200" height="200" alt="UPI QR"
+                <img src="https://res.cloudinary.com/dui2zd49s/image/upload/f_webp,q_auto/v1771818839/be4a5f29-f251-497a-a334-04fe026d16e8_dlzvln.jpg"
+                     width="200" height="200" alt="UPI QR" loading="lazy" decoding="async"
                      style="display:block;border-radius:8px;"
                      onerror="this.parentElement.parentElement.innerHTML=fallbackQR()">
             </div>`;
@@ -5371,6 +5369,19 @@ Be warm, encouraging, and use emojis occasionally. Made for K4hav Study Tracker.
 /* SEO footer hidden */
 #seo-footer{display:none;}
 </style>
+
+<script>
+/* ── Add copyright footer to every page ── */
+document.addEventListener('DOMContentLoaded', function() {
+  var pages = document.querySelectorAll('.page');
+  pages.forEach(function(page) {
+    var footer = document.createElement('div');
+    footer.style.cssText = 'text-align:center;padding:1.5rem 1rem 1rem;margin-top:2.5rem;border-top:1px solid var(--border-dim);font-family:\'Outfit\',sans-serif;font-size:.78rem;letter-spacing:.06em;color:var(--text-dim);';
+    footer.textContent = 'Copyright 2026 ƘҽՏհɑѵ. All Rights Reserved.';
+    page.appendChild(footer);
+  });
+});
+</script>
 
 <!-- SEO: Semantic footer — crawlable but visually hidden -->
 <footer id="seo-footer" aria-hidden="true">
