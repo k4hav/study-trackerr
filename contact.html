@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="theme-color" content="#04030a">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%2304030a'/%3E%3Crect width='64' height='64' rx='14' fill='none' stroke='%23c9a84c' stroke-width='3'/%3E%3Ctext x='32' y='46' text-anchor='middle' font-family='Arial Black%2CArial%2Csans-serif' font-size='44' font-weight='900' fill='%23c9a84c'%3EK%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<link rel="stylesheet" href="style.css">
+<title>Contact & Social Links | Study Tracker by k4hav</title>
+<meta name="description" content="Free study tracker for Indian students — Contact & Social Links. Track chapters, revisions and PYQs.">
+</head>
+<body data-theme="gold">
+<canvas id="bg-3d"></canvas>
+<div id="theme-toast"></div>
+<div class="main-wrap">
+  <!-- ─── HERO ─── -->
+  <div id="hero">
+    <canvas id="hero-canvas"></canvas>
+    <div id="hero-content">
+      <div id="hero-eyebrow">10th · Intermediate · Graduation</div>
+      <div id="hero-title">📚 <span>Study</span> Tracker</div>
+      <div id="hero-sub">Track · Learn · Excel — Class 10 to Graduation</div>
+      <div id="hero-rule"></div>
+
+      <!-- HERO WIDGETS -->
+      <div id="hero-widgets">
+
+        <!-- Countdown Timer -->
+        <div class="hw" id="hw-countdown">
+          <span class="hw-icon">⏳</span>
+          <div class="hw-body">
+            <span class="hw-val mono" id="cd-display">25:00</span>
+            <span class="hw-lbl" id="cd-label">Countdown</span>
+          </div>
+          <div class="sw-btns">
+            <div id="cd-setup" style="display:flex;align-items:center;gap:.25rem;">
+              <input id="cd-min" type="number" min="0" max="99" value="25" style="width:28px;text-align:center;background:rgba(255,255,255,.07);border:1px solid rgba(201,168,76,.28);border-radius:.4rem;color:var(--gold);font-family:var(--font-ui);font-size:.78rem;font-weight:700;padding:.12rem 0;outline:none;-webkit-tap-highlight-color:transparent;">
+              <span style="color:rgba(201,168,76,.4);font-size:.72rem;">min</span>
+              <button class="sw-action" onclick="cdStart()" style="padding:.25rem .55rem;font-size:.68rem;">▶ Set</button>
+            </div>
+            <button id="cd-pausebtn" class="sw-action" onclick="cdToggle()" style="display:none;padding:.25rem .55rem;font-size:.68rem;">⏸ Pause</button>
+            <button id="cd-resetbtn" class="sw-reset" onclick="cdReset()" style="display:none;" title="Reset">↺</button>
+          </div>
+        </div>
+
+        <!-- Stopwatch -->
+        <div class="hw hw-sw" id="hw-stopwatch">
+          <span class="hw-icon">⏱️</span>
+          <div class="hw-body">
+            <span class="hw-val mono" id="sw-display">00:00:00</span>
+            <span class="hw-lbl">Stopwatch</span>
+          </div>
+          <div class="sw-btns">
+            <button id="sw-btn" class="sw-action" onclick="swToggle()">▶ Start</button>
+            <button class="sw-reset" onclick="swReset()" title="Reset">↺</button>
+          </div>
+        </div>
+
+        <!-- Today's Study Time -->
+        <div class="hw">
+          <span class="hw-icon">📖</span>
+          <div class="hw-body">
+            <span class="hw-val" id="hw-today">0h 00m</span>
+            <span class="hw-lbl">Today's Study</span>
+          </div>
+        </div>
+
+        <!-- Live Clock + Date -->
+        <div class="hw">
+          <span class="hw-icon">🕐</span>
+          <div class="hw-body">
+            <span class="hw-val mono" id="hw-clock">--:--</span>
+            <span class="hw-lbl" id="hw-date">Loading…</span>
+          </div>
+        </div>
+
+      </div>
+      <!-- Motivational Quote -->
+      <div id="hero-quote"></div>
+    </div>
+  </div>
+  <div class="glass rounded-2xl p-4 mb-6">
+    <div class="flex flex-wrap gap-3 justify-center">
+<a href="index.html" class="tab-button glass-strong rounded-xl px-5 py-3 text-white font-semibold" style="text-decoration:none"><span class="btn-label">🏠 Home</span><span class="btn-hover-label">🏠 Home</span><span class="btn-fill"></span></a>
+<a href="tenth.html" class="tab-button glass-strong rounded-xl px-5 py-3 text-white font-semibold" style="text-decoration:none"><span class="btn-label">🏫 10th</span><span class="btn-hover-label">🏫 10th</span><span class="btn-fill"></span></a>
+<a href="intermediate.html" class="tab-button glass-strong rounded-xl px-5 py-3 text-white font-semibold" style="text-decoration:none"><span class="btn-label">📗 11th & 12th</span><span class="btn-hover-label">📗 11th & 12th</span><span class="btn-fill"></span></a>
+<a href="graduation.html" class="tab-button glass-strong rounded-xl px-5 py-3 text-white font-semibold" style="text-decoration:none"><span class="btn-label">🎓 Graduation</span><span class="btn-hover-label">🎓 Graduation</span><span class="btn-fill"></span></a>
+<a href="skills.html" class="tab-button glass-strong rounded-xl px-5 py-3 text-white font-semibold" style="text-decoration:none"><span class="btn-label">💡 Skills</span><span class="btn-hover-label">💡 Skills</span><span class="btn-fill"></span></a>
+<a href="contact.html" class="tab-button glass-strong rounded-xl px-5 py-3 text-white font-semibold active" style="text-decoration:none"><span class="btn-label">💬 Contact</span><span class="btn-hover-label">💬 Contact</span><span class="btn-fill"></span></a>
+<a href="support.html" class="tab-button glass-strong rounded-xl px-5 py-3 text-white font-semibold" style="text-decoration:none"><span class="btn-label">❤️ Support</span><span class="btn-hover-label">❤️ Support</span><span class="btn-fill"></span></a>
+    </div>
+  </div>
+<!-- ==================== PAGE: HELP & SUPPORT ==================== -->
+    <div id="page-help" class="page max-w-5xl mx-auto">
+        <div class="flex items-center gap-4 mb-6">
+            <button onclick="window.location.href='index.html'" class="back-btn glass-strong rounded-xl px-4 py-2 text-white font-semibold"><span class="btn-label"><svg class="btn-arrow" viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"/></svg> Back</span><span class="btn-hover-label"><svg class="btn-arrow" viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"/></svg> Back</span><span class="btn-fill"></span></button>
+            <div class="glass-strong rounded-2xl p-4 flex-1 text-center">
+                <h2 class="text-2xl md:text-3xl font-bold text-white">💬 Help </h2>
+            </div>
+        </div>
+
+        <!-- ═══════ SOCIAL CONNECT — Holographic Cards ═══════ -->
+        <div style="position:relative;padding:2rem 1rem 1.5rem;text-align:center;">
+
+          <!-- Subtitle -->
+          <p style="color:var(--gold);font-size:1rem;margin-bottom:.4rem;font-weight:600;">Need help or have a suggestion? Connect on any platform!</p>
+          <p style="color:rgba(232,224,208,.38);font-size:.76rem;margin-bottom:2rem;font-style:italic;">Click any card to open · Hover for the vibe ✨</p>
+
+          <!-- Canvas constellation background -->
+          <canvas id="social-canvas" style="position:absolute;inset:0;width:100%;height:100%;pointer-events:none;border-radius:1rem;opacity:.55;z-index:0;"></canvas>
+
+          <!-- Card Grid -->
+          <div id="social-cards" style="position:relative;z-index:10;display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1.25rem;max-width:900px;margin:0 auto;">
+
+            <!-- GitHub -->
+            <a href="https://github.com/k4hav" target="_blank" rel="noopener" class="scard" data-color="160,180,255"
+               style="text-decoration:none;display:flex;flex-direction:column;align-items:center;padding:1.75rem 1.25rem 1.5rem;border-radius:1.4rem;background:linear-gradient(145deg,rgba(22,27,34,.95),rgba(36,41,50,.85));border:1px solid rgba(160,180,255,.28);cursor:pointer;transition:transform .2s,box-shadow .2s;will-change:transform;position:relative;overflow:hidden;">
+              <div class="scard-shine"></div>
+              <div style="width:64px;height:64px;border-radius:50%;background:#0d1117;border:2.5px solid rgba(200,180,255,.6);display:flex;align-items:center;justify-content:center;margin-bottom:1rem;box-shadow:0 0 22px rgba(160,180,255,.35);transition:box-shadow .25s;">
+                <svg viewBox="0 0 24 24" width="34" height="34" fill="#fff"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
+              </div>
+              <div style="font-weight:800;font-size:1.05rem;color:#e2e8f0;margin-bottom:.25rem;letter-spacing:.01em;">GitHub</div>
+              <div style="font-size:.74rem;color:rgba(200,180,255,.6);font-family:monospace;margin-bottom:1rem;">github.com/k4hav</div>
+              <div style="display:inline-flex;align-items:center;gap:.35rem;padding:.3rem .85rem;border-radius:2rem;background:rgba(160,180,255,.12);border:1px solid rgba(160,180,255,.3);color:rgba(200,185,255,.85);font-size:.74rem;font-weight:700;letter-spacing:.04em;">
+                <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6M15 3h6v6M10 14L21 3"/></svg>
+                Visit
+              </div>
+            </a>
+
+            <!-- X / Twitter -->
+            <a href="https://x.com/k4hav" target="_blank" rel="noopener" class="scard" data-color="220,220,220"
+               style="text-decoration:none;display:flex;flex-direction:column;align-items:center;padding:1.75rem 1.25rem 1.5rem;border-radius:1.4rem;background:linear-gradient(145deg,rgba(10,10,10,.95),rgba(20,20,22,.85));border:1px solid rgba(255,255,255,.2);cursor:pointer;transition:transform .2s,box-shadow .2s;will-change:transform;position:relative;overflow:hidden;">
+              <div class="scard-shine"></div>
+              <div style="width:64px;height:64px;border-radius:50%;background:#000;border:2.5px solid rgba(255,255,255,.55);display:flex;align-items:center;justify-content:center;margin-bottom:1rem;box-shadow:0 0 22px rgba(255,255,255,.18);transition:box-shadow .25s;">
+                <svg viewBox="0 0 24 24" width="30" height="30" fill="#fff"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.744l7.737-8.835L1.254 2.25H8.08l4.259 5.63L18.244 2.25zm-1.161 17.52h1.833L7.084 4.126H5.117L17.083 19.77z"/></svg>
+              </div>
+              <div style="font-weight:800;font-size:1.05rem;color:#e2e8f0;margin-bottom:.25rem;letter-spacing:.01em;">X (Twitter)</div>
+              <div style="font-size:.74rem;color:rgba(200,200,200,.55);font-family:monospace;margin-bottom:1rem;">x.com/k4hav</div>
+              <div style="display:inline-flex;align-items:center;gap:.35rem;padding:.3rem .85rem;border-radius:2rem;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.22);color:rgba(220,220,220,.85);font-size:.74rem;font-weight:700;letter-spacing:.04em;">
+                <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6M15 3h6v6M10 14L21 3"/></svg>
+                Follow
+              </div>
+            </a>
+
+            <!-- Instagram -->
+            <a href="https://www.instagram.com/k4hav" target="_blank" rel="noopener" class="scard" data-color="253,89,73"
+               style="text-decoration:none;display:flex;flex-direction:column;align-items:center;padding:1.75rem 1.25rem 1.5rem;border-radius:1.4rem;background:linear-gradient(145deg,rgba(20,8,14,.95),rgba(32,12,22,.85));border:1px solid rgba(253,89,73,.32);cursor:pointer;transition:transform .2s,box-shadow .2s;will-change:transform;position:relative;overflow:hidden;">
+              <div class="scard-shine"></div>
+              <div style="width:64px;height:64px;border-radius:50%;background:radial-gradient(circle at 30% 107%,#fdf497 0%,#fd5949 45%,#d6249f 60%,#285AEB 90%);border:2.5px solid rgba(253,89,73,.7);display:flex;align-items:center;justify-content:center;margin-bottom:1rem;box-shadow:0 0 22px rgba(214,36,159,.4);transition:box-shadow .25s;">
+                <svg viewBox="0 0 24 24" width="30" height="30" fill="#fff"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+              </div>
+              <div style="font-weight:800;font-size:1.05rem;color:#e2e8f0;margin-bottom:.25rem;letter-spacing:.01em;">Instagram</div>
+              <div style="font-size:.74rem;color:rgba(253,180,160,.55);font-family:monospace;margin-bottom:1rem;">@k4hav</div>
+              <div style="display:inline-flex;align-items:center;gap:.35rem;padding:.3rem .85rem;border-radius:2rem;background:rgba(253,89,73,.1);border:1px solid rgba(253,89,73,.35);color:rgba(253,160,140,.9);font-size:.74rem;font-weight:700;letter-spacing:.04em;">
+                <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6M15 3h6v6M10 14L21 3"/></svg>
+                Follow
+              </div>
+            </a>
+
+            <!-- Telegram -->
+            <a href="https://t.me/k4hav" target="_blank" rel="noopener" class="scard" data-color="42,171,238"
+               style="text-decoration:none;display:flex;flex-direction:column;align-items:center;padding:1.75rem 1.25rem 1.5rem;border-radius:1.4rem;background:linear-gradient(145deg,rgba(6,16,26,.95),rgba(10,24,40,.85));border:1px solid rgba(42,171,238,.32);cursor:pointer;transition:transform .2s,box-shadow .2s;will-change:transform;position:relative;overflow:hidden;">
+              <div class="scard-shine"></div>
+              <div style="width:64px;height:64px;border-radius:50%;background:linear-gradient(135deg,#2aabee,#229ed9);border:2.5px solid rgba(42,171,238,.75);display:flex;align-items:center;justify-content:center;margin-bottom:1rem;box-shadow:0 0 22px rgba(42,171,238,.4);transition:box-shadow .25s;">
+                <svg viewBox="0 0 24 24" width="30" height="30" fill="#fff"><path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg>
+              </div>
+              <div style="font-weight:800;font-size:1.05rem;color:#e2e8f0;margin-bottom:.25rem;letter-spacing:.01em;">Telegram</div>
+              <div style="font-size:.74rem;color:rgba(130,210,255,.55);font-family:monospace;margin-bottom:1rem;">t.me/k4hav</div>
+              <div style="display:inline-flex;align-items:center;gap:.35rem;padding:.3rem .85rem;border-radius:2rem;background:rgba(42,171,238,.1);border:1px solid rgba(42,171,238,.35);color:rgba(120,210,255,.9);font-size:.74rem;font-weight:700;letter-spacing:.04em;">
+                <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6M15 3h6v6M10 14L21 3"/></svg>
+                Message
+              </div>
+            </a>
+
+          </div><!-- /grid -->
+
+          <div class="mt-6 pt-5 border-t border-white border-opacity-10">
+            <p style="color:#475569;font-size:0.82rem;">Created with ❤️ to help students track their study preparation</p>
+          </div>
+        </div>
+        </div>
+    </div>
+
+    <style>
+    /* ── Social Cards ── */
+    .scard-shine{
+      position:absolute;inset:0;
+      background:linear-gradient(115deg,transparent 20%,rgba(255,255,255,.06) 50%,transparent 80%);
+      transform:translateX(-100%);
+      transition:transform .55s ease;
+      pointer-events:none;
+      border-radius:1.4rem;
+    }
+    .scard:hover .scard-shine{ transform:translateX(100%); }
+    .scard:hover{
+      transform:perspective(800px) rotateX(-4deg) translateY(-6px) scale(1.03) !important;
+    }
+    .scard:hover > div:first-of-type{
+      box-shadow:0 0 36px rgba(var(--sc),0.65) !important;
+    }
+    @media(max-width:640px){
+      #social-cards{ grid-template-columns:repeat(2,1fr); gap:.85rem; }
+      .scard{ padding:1.25rem .85rem 1.1rem; }
+    }
+    </style>
+
+    <script>
+    /* ── Constellation canvas behind social cards ── */
+    (function(){
+      var cvs=document.getElementById('social-canvas');
+      if(!cvs)return;
+      var ctx=cvs.getContext('2d');
+      var pts=[],NUM=55,t=0;
+      function resize(){
+        cvs.width=cvs.offsetWidth||600;
+        cvs.height=cvs.offsetHeight||420;
+      }
+      function makePoint(){
+        return{
+          x:Math.random()*(cvs.width||600),
+          y:Math.random()*(cvs.height||420),
+          vx:(Math.random()-.5)*.35,
+          vy:(Math.random()-.5)*.35,
+          r:Math.random()*1.6+.5
+        };
+      }
+      function init(){
+        resize();
+        pts=[];
+        for(var i=0;i<NUM;i++) pts.push(makePoint());
+      }
+      function draw(){
+        ctx.clearRect(0,0,cvs.width,cvs.height);
+        t+=.012;
+        for(var i=0;i<pts.length;i++){
+          var p=pts[i];
+          p.x+=p.vx; p.y+=p.vy;
+          if(p.x<0||p.x>cvs.width) p.vx*=-1;
+          if(p.y<0||p.y>cvs.height) p.vy*=-1;
+          // dot
+          ctx.beginPath();ctx.arc(p.x,p.y,p.r,0,Math.PI*2);
+          ctx.fillStyle='rgba(201,168,76,'+(0.3+Math.sin(t+i)*.2)+')';
+          ctx.fill();
+          // lines to nearby
+          for(var j=i+1;j<pts.length;j++){
+            var q=pts[j];
+            var dx=p.x-q.x,dy=p.y-q.y,d=Math.sqrt(dx*dx+dy*dy);
+            if(d<110){
+              ctx.beginPath();ctx.moveTo(p.x,p.y);ctx.lineTo(q.x,q.y);
+              ctx.strokeStyle='rgba(201,168,76,'+(0.12*(1-d/110))+')';
+              ctx.lineWidth=.8;ctx.stroke();
+            }
+          }
+        }
+        requestAnimationFrame(draw);
+      }
+      init();draw();
+      window.addEventListener('resize',function(){init();});
+      // 3D tilt on mouse move
+      var cards=document.querySelectorAll('.scard');
+      cards.forEach(function(card){
+        var cr=card.dataset.color||'201,168,76';
+        card.style.setProperty('--sc',cr);
+        card.addEventListener('mousemove',function(e){
+          var r=card.getBoundingClientRect();
+          var x=(e.clientX-r.left)/r.width-.5;
+          var y=(e.clientY-r.top)/r.height-.5;
+          card.style.transform='perspective(700px) rotateX('+(-y*14)+'deg) rotateY('+(x*14)+'deg) translateY(-6px) scale(1.04)';
+          card.style.boxShadow='0 18px 50px rgba('+cr+',.32), 0 0 0 1px rgba('+cr+',.22)';
+        });
+        card.addEventListener('mouseleave',function(){
+          card.style.transform='';
+          card.style.boxShadow='';
+        });
+      });
+    })();
+    </script>
+
+ ==================== -->
+    
+<script>
+    /* ── Constellation canvas behind social cards ── */
+    (function(){
+      var cvs=document.getElementById('social-canvas');
+      if(!cvs)return;
+      var ctx=cvs.getContext('2d');
+      var pts=[],NUM=55,t=0;
+      function resize(){
+        cvs.width=cvs.offsetWidth||600;
+        cvs.height=cvs.offsetHeight||420;
+      }
+      function makePoint(){
+        return{
+          x:Math.random()*(cvs.width||600),
+          y:Math.random()*(cvs.height||420),
+          vx:(Math.random()-.5)*.35,
+          vy:(Math.random()-.5)*.35,
+          r:Math.random()*1.6+.5
+        };
+      }
+      function init(){
+        resize();
+        pts=[];
+        for(var i=0;i<NUM;i++) pts.push(makePoint());
+      }
+      function draw(){
+        ctx.clearRect(0,0,cvs.width,cvs.height);
+        t+=.012;
+        for(var i=0;i<pts.length;i++){
+          var p=pts[i];
+          p.x+=p.vx; p.y+=p.vy;
+          if(p.x<0||p.x>cvs.width) p.vx*=-1;
+          if(p.y<0||p.y>cvs.height) p.vy*=-1;
+          // dot
+          ctx.beginPath();ctx.arc(p.x,p.y,p.r,0,Math.PI*2);
+          ctx.fillStyle='rgba(201,168,76,'+(0.3+Math.sin(t+i)*.2)+')';
+          ctx.fill();
+          // lines to nearby
+          for(var j=i+1;j<pts.length;j++){
+            var q=pts[j];
+            var dx=p.x-q.x,dy=p.y-q.y,d=Math.sqrt(dx*dx+dy*dy);
+            if(d<110){
+              ctx.beginPath();ctx.moveTo(p.x,p.y);ctx.lineTo(q.x,q.y);
+              ctx.strokeStyle='rgba(201,168,76,'+(0.12*(1-d/110))+')';
+              ctx.lineWidth=.8;ctx.stroke();
+            }
+          }
+        }
+        requestAnimationFrame(draw);
+      }
+      init();draw();
+      window.addEventListener('resize',function(){init();});
+      // 3D tilt on mouse move
+      var cards=document.querySelectorAll('.scard');
+      cards.forEach(function(card){
+        var cr=card.dataset.color||'201,168,76';
+        card.style.setProperty('--sc',cr);
+        card.addEventListener('mousemove',function(e){
+          var r=card.getBoundingClientRect();
+          var x=(e.clientX-r.left)/r.width-.5;
+          var y=(e.clientY-r.top)/r.height-.5;
+          card.style.transform='perspective(700px) rotateX('+(-y*14)+'deg) rotateY('+(x*14)+'deg) translateY(-6px) scale(1.04)';
+          card.style.boxShadow='0 18px 50px rgba('+cr+',.32), 0 0 0 1px rgba('+cr+',.22)';
+        });
+        card.addEventListener('mouseleave',function(){
+          card.style.transform='';
+          card.style.boxShadow='';
+        });
+      });
+    })();
+    </script>
+</div>
+<!-- AI FAB Button -->
+    <div id="ai-fab-wrap">
+        <div id="ai-fab-label">🦇 Batman AI</div>
+        <div id="ai-btn-ring-wrap">
+            <div class="pulse-ring"></div>
+            <div class="pulse-ring2"></div>
+            <div class="pulse-ring3"></div>
+            <button id="ai-chat-btn" title="Open Batman AI">
+                <img src="https://imgs.search.brave.com/qbR0ALWfLL_OWqCoE0JqRgqyIHVGpI-ja2pXrDlFId4/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9tLmdl/dHR5d2FsbHBhcGVy/cy5jb20vd3AtY29u/dGVudC91cGxvYWRz/LzIwMjMvMTAvQ2Fy/dG9vbi1CYXRtYW4t/UHJvZmlsZS1QaWN0/dXJlLmpwZw"
+                     alt="Batman AI"
+                     loading="lazy" decoding="async"
+                     style="width:100%;height:100%;object-fit:cover;border-radius:50%;display:block;"/>
+                <div class="notif" id="ai-notif">1</div>
+            </button>
+        </div>
+    </div>
+
+    <!-- Edge peek tab (shown when FAB dragged offscreen) -->
+    <div id="ai-show-tab" onclick="aiShowBtn()" title="Show AI"></div>
+
+    <!-- ════ AI CHAT PANEL ════ -->
+    <div id="ai-panel">
+
+        <!-- Header -->
+        <div id="ai-header">
+            <div style="display:flex;align-items:center;gap:9px;">
+                <img src="https://imgs.search.brave.com/qbR0ALWfLL_OWqCoE0JqRgqyIHVGpI-ja2pXrDlFId4/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9tLmdl/dHR5d2FsbHBhcGVy/cy5jb20vd3AtY29u/dGVudC91cGxvYWRz/LzIwMjMvMTAvQ2Fy/dG9vbi1CYXRtYW4t/UHJvZmlsZS1QaWN0/dXJlLmpwZw"
+                    style="width:32px;height:32px;border-radius:50%;object-fit:cover;border:1.5px solid var(--border);" alt="AI"/>
+                <div>
+                    <div style="font-weight:700;font-size:.85rem;color:var(--gold);font-family:var(--font-ui);">🦇 Batman AI</div>
+                    <div id="ai-status-txt" style="font-size:.68rem;color:#22c55e;font-family:var(--font-ui);">● Online — Ask anything!</div>
+                </div>
+            </div>
+            <div style="display:flex;gap:6px;align-items:center;">
+                <button id="ai-expand-btn" class="aip-close" onclick="aiExpand()" title="Expand chat">⛶</button>
+                <button class="aip-close" onclick="aiToggle()" title="Close">✕</button>
+            </div>
+        </div>
+
+        <!-- Provider selector panel (hidden by default) -->
+        <div id="ai-provider-panel" style="display:none;padding:10px 14px;border-bottom:1px solid var(--border-dim);background:rgba(0,0,0,.2);flex-shrink:0;">
+            <div style="font-size:.72rem;color:var(--text-dim);margin-bottom:8px;font-family:var(--font-ui);letter-spacing:.06em;text-transform:uppercase;">Choose AI Provider</div>
+            <div style="display:grid;grid-template-columns:1fr 1fr;gap:6px;">
+                <div class="provider-card" id="pcard-gemini" onclick="selectProvider('gemini')">
+                    <div style="font-size:.78rem;font-weight:600;color:var(--text);">⚡ Gemini Flash</div>
+                    <span class="badge-free">FREE</span>
+                </div>
+                <div class="provider-card" id="pcard-groq" onclick="selectProvider('groq')">
+                    <div style="font-size:.78rem;font-weight:600;color:var(--text);">🚀 Groq</div>
+                    <span class="badge-free">FREE</span>
+                </div>
+                <div class="provider-card" id="pcard-openrouter" onclick="selectProvider('openrouter')">
+                    <div style="font-size:.78rem;font-weight:600;color:var(--text);">🔀 OpenRouter</div>
+                    <span class="badge-free">FREE</span>
+                </div>
+                <div class="provider-card" id="pcard-openai" onclick="selectProvider('openai')">
+                    <div style="font-size:.78rem;font-weight:600;color:var(--text);">🤖 GPT-4o</div>
+                    <span class="badge-paid">PAID</span>
+                </div>
+                <div class="provider-card" id="pcard-cohere" onclick="selectProvider('cohere')">
+                    <div style="font-size:.78rem;font-weight:600;color:var(--text);">🌊 Cohere</div>
+                    <span class="badge-free">TRIAL</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Chat messages body -->
+        <div id="ai-body">
+            <div id="chat-msgs" style="display:flex;flex-direction:column;gap:10px;"></div>
+            <!-- Suggestion chips -->
+            <div id="chips-row" class="chips-row" style="margin-top:4px;">
+                <span class="qchip" onclick="quickAsk(this)">📚 Study tips</span>
+                <span class="qchip" onclick="quickAsk(this)">📱 Install app</span>
+                <span class="qchip" onclick="quickAsk(this)">🔑 Get free API key</span>
+                <span class="qchip" onclick="quickAsk(this)">🧮 Math help</span>
+            </div>
+        </div>
+
+        <!-- Image preview strip -->
+        <div id="img-preview-wrap" style="display:none;padding:6px 14px;border-top:1px solid var(--border-dim);background:rgba(0,0,0,.15);flex-shrink:0;">
+            <div style="display:flex;align-items:center;gap:8px;">
+                <img id="img-preview" src="" style="height:48px;border-radius:8px;border:1px solid var(--border);" alt="preview"/>
+                <button onclick="removeImage()" style="color:#f87171;background:none;border:none;font-size:18px;cursor:pointer;line-height:1;">✕</button>
+            </div>
+        </div>
+
+        <!-- API Key area -->
+        <div id="ai-key-area" style="padding:10px 14px;border-top:1px solid var(--border-dim);background:rgba(0,0,0,.2);flex-shrink:0;">
+            <div id="key-label-txt" style="font-size:.72rem;font-weight:600;color:var(--gold);margin-bottom:4px;font-family:var(--font-ui);"></div>
+            <div id="key-hint-txt" style="font-size:.68rem;color:var(--text-dim);margin-bottom:8px;line-height:1.5;font-family:var(--font-ui);"></div>
+            <div style="display:flex;gap:6px;">
+                <input id="ai-api-input" type="password" placeholder="Paste API key here..." 
+                    style="flex:1;background:rgba(255,255,255,.05);border:1px solid var(--border-dim);border-radius:8px;padding:7px 10px;font-size:.78rem;color:var(--text);outline:none;font-family:var(--font-ui);"
+                    onkeydown="if(event.key==='Enter')saveKey()"/>
+                <button onclick="saveKey()" 
+                    style="padding:7px 14px;border-radius:8px;border:none;background:var(--gold);color:#000;font-weight:700;font-size:.78rem;cursor:pointer;white-space:nowrap;font-family:var(--font-ui);">Save</button>
+            </div>
+        </div>
+
+        <!-- Footer input row -->
+        <div id="ai-footer">
+            <div style="display:flex;gap:8px;align-items:flex-end;margin-bottom:8px;">
+                <button id="img-upload-btn" onclick="document.getElementById('file-input-hidden').click()" title="Upload image">🖼️</button>
+                <textarea id="chat-input-txt" rows="1" placeholder="Koi bhi doubt poochho... 🦇"
+                    onkeydown="if(event.key==='Enter'&&!event.shiftKey){event.preventDefault();aiSend();}"
+                    oninput="aiResize(this)"></textarea>
+                <button id="chat-send-btn" onclick="aiSend()" title="Send">
+                    <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+                </button>
+            </div>
+            <div style="display:flex;align-items:center;justify-content:space-between;">
+                <button id="provider-badge-btn" onclick="toggleProviderPanel()" 
+                    style="font-size:.68rem;padding:3px 10px;border-radius:20px;border:1px solid var(--border-dim);background:var(--gold-dim);color:var(--gold);font-family:var(--font-ui);cursor:pointer;transition:all .2s;"
+                    onmouseover="this.style.borderColor='var(--border)'" onmouseout="this.style.borderColor='var(--border-dim)'">⚙️ Gemini Flash</button>
+                <span style="font-size:.62rem;color:var(--text-dim);font-family:var(--font-ui);">Enter = Send • Shift+Enter = New line</span>
+            </div>
+        </div>
+    </div>
+    <!-- ════ END AI PANEL ════ -->
+<canvas id="particle-canvas" style="position:fixed;inset:0;pointer-events:none;z-index:1;"></canvas>
+<script src="data.js"></script>
+<script src="app.js"></script>
+<script src="ai.js"></script>
+<script src="effects.js"></script>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+  document.getElementById('page-help').classList.add('active');
+  // Constellation canvas init already auto-runs from inline script
+});
+</script>
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    document.querySelectorAll('.page').forEach(function(page) {
+      var footer = document.createElement('div');
+      footer.style.cssText = 'text-align:center;padding:1.5rem 1rem 1rem;margin-top:2.5rem;border-top:1px solid var(--border-dim);font-family:\'Outfit\',sans-serif;font-size:.78rem;letter-spacing:.06em;color:var(--text-dim);';
+      footer.textContent = 'Copyright 2026 ƘҽՏհɑѵ. All Rights Reserved.';
+      page.appendChild(footer);
+    });
+  });
+</script>
+</body>
+</html>
