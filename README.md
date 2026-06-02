@@ -1,90 +1,84 @@
 <div align="center">
 
-<img src="https://img.shields.io/badge/Made%20with-%E2%9D%A4%EF%B8%8F-gold?style=for-the-badge" />
-<img src="https://img.shields.io/badge/Free-100%25-brightgreen?style=for-the-badge" />
-<img src="https://img.shields.io/badge/No%20Login-Required-blueviolet?style=for-the-badge" />
-<img src="https://img.shields.io/badge/Works-Offline-orange?style=for-the-badge" />
-
-<br/><br/>
+<br/>
 
 ```
-╔═══════════════════════════════════════════════════╗
-║                                                   ║
-║        📚  S T U D Y   T R A C K E R             ║
-║             by  k 4 h a v                         ║
-║                                                   ║
-║     Track · Learn · Excel — 10th to Graduation   ║
-║                                                   ║
-╚═══════════════════════════════════════════════════╝
+██╗  ██╗ ██╗  ██╗ █████╗ ██╗   ██╗
+██║ ██╔╝ ██║  ██║██╔══██╗██║   ██║
+█████╔╝  ███████║███████║██║   ██║
+██╔═██╗  ╚════██║██╔══██║╚██╗ ██╔╝
+██║  ██╗      ██║██║  ██║ ╚████╔╝
+╚═╝  ╚═╝      ╚═╝╚═╝  ╚═╝  ╚═══╝
 ```
 
-**A free, beautiful, browser-based study tracker for Indian students.**
-Track chapters, revisions & PYQs — from Class 10 all the way to Graduation.
-No login. No installation. Just open and study. 🔥
+### 📚 **Study Tracker** — *by k4hav*
+#### *Track · Learn · Excel — Class 10 to Graduation*
 
 <br/>
 
-[![Live Demo](https://img.shields.io/badge/🌐%20Live%20Demo-study--trackerr.vercel.app-gold?style=for-the-badge&color=c9a84c)](https://study-trackerr.vercel.app)
+<img src="https://img.shields.io/badge/FREE-100%25-22c55e?style=for-the-badge&labelColor=0a0a0a" />
+<img src="https://img.shields.io/badge/NO%20LOGIN-NEEDED-8b5cf6?style=for-the-badge&labelColor=0a0a0a" />
+<img src="https://img.shields.io/badge/WORKS-OFFLINE-f59e0b?style=for-the-badge&labelColor=0a0a0a" />
+<img src="https://img.shields.io/badge/MOBILE-FRIENDLY-06b6d4?style=for-the-badge&labelColor=0a0a0a" />
+
+<br/><br/>
+
+[![Live Demo](https://img.shields.io/badge/🌐%20%20LIVE%20DEMO%20%20→%20study--trackerr.vercel.app-%23c9a84c?style=for-the-badge&labelColor=0a0a0a&color=c9a84c)](https://study-trackerr.vercel.app)
+
+<br/>
+
+> **A free, beautiful, browser-based study tracker built for Indian students.**
+> Track chapters, revisions & PYQs — from Class 10 all the way to Graduation.
+> No login. No app. No installation. Just open and start studying. 🔥
+
+<br/>
+
+---
 
 </div>
 
----
+## ⚡ Features at a Glance
 
-## ✨ Features
+<table>
+<tr>
+<td width="50%">
 
-| Feature | Description |
-|--------|-------------|
-| 🏫 **Class 10 Tracker** | Maths · Science · SST · English · Hindi · Sanskrit · IT |
-| 📗 **11th & 12th Tracker** | Science (PCM/PCB) · Commerce · Arts streams |
-| 🎓 **Graduation Tracker** | B.Tech · BCA · BSc · BCom · BA · BBA — semester-wise |
-| ☑️ **Chapter Tracking** | Theory · Revision · PYQ checkboxes per chapter |
-| ⏱️ **Study Timer** | Stopwatch + Countdown timer built-in |
-| 📖 **Daily Study Time** | Tracks how long you studied today |
-| 🔥 **Study Streak** | Keeps you consistent, day by day |
-| 💡 **Skills Roadmaps** | Frontend · Backend · Full Stack · DSA · Cyber · Video Editing |
-| 🦇 **Batman AI** | Built-in AI assistant (Gemini · Groq · GPT-4o · Cohere) |
-| 🎨 **6 Themes** | Gold · Silver · Rose · Cyan · Violet · Emerald |
-| 💾 **Auto Save** | Progress saved in browser localStorage — no account needed |
-| 📱 **Mobile Friendly** | Works perfectly on Android & iPhone |
-| ⚡ **Works Offline** | No internet needed after first load |
+**📚 Study Tracking**
+- 🏫 Class 10 — Maths · Science · SST · Hindi · Sanskrit · IT
+- 📗 Class 11 & 12 — Science · Commerce · Arts
+- 🎓 Graduation — B.Tech · BCA · BSc · BCom · BA · BBA
+- ☑️ Theory · Revision · PYQ checkboxes per chapter
 
----
+</td>
+<td width="50%">
 
-## 📸 Pages
+**⏱️ Productivity Tools**
+- 🕐 Live stopwatch + countdown timer
+- 📖 Daily study time tracker
+- 🔥 Study streak counter
+- 💡 6 built-in skills roadmaps
 
-```
-🏠 index.html        →  Home Dashboard
-🏫 tenth.html        →  Class 10 / Matriculation
-📗 intermediate.html →  11th & 12th / Intermediate
-🎓 graduation.html   →  Graduation Courses
-💡 skills.html       →  Skills & Roadmaps
-💬 contact.html      →  Contact & Social Links
-❤️  support.html      →  Support the Project
-```
+</td>
+</tr>
+<tr>
+<td width="50%">
 
----
+**🎨 Personalization**
+- 6 color themes — Gold · Silver · Rose · Cyan · Violet · Emerald
+- 3D animated background (Three.js)
+- Grain texture + glassmorphism UI
 
-## 🚀 Getting Started
+</td>
+<td width="50%">
 
-### Option 1 — Just open in browser
-```
-No setup needed. Download the ZIP, extract, open index.html in your browser.
-```
+**🦇 Batman AI**
+- Multi-provider AI chat built-in
+- Gemini Flash · Groq · OpenRouter · GPT-4o · Cohere
+- Ask anything, anytime
 
-### Option 2 — Deploy on Vercel
-```bash
-1. Fork this repo
-2. Go to vercel.com → New Project
-3. Import your forked repo
-4. Deploy — done! 🎉
-```
-
-### Option 3 — Clone locally
-```bash
-git clone https://github.com/k4hav/study-trackerr.git
-cd study-trackerr
-# Open index.html in browser
-```
+</td>
+</tr>
+</table>
 
 ---
 
@@ -93,19 +87,19 @@ cd study-trackerr
 ```
 study-trackerr/
 │
-├── 📄 index.html          # Home page
-├── 📄 tenth.html          # Class 10 tracker
-├── 📄 intermediate.html   # 11th & 12th tracker
-├── 📄 graduation.html     # Graduation tracker
-├── 📄 skills.html         # Skills roadmaps
-├── 📄 contact.html        # Social links
-├── 📄 support.html        # Support page
+├── 📄 index.html           ← Home Dashboard
+├── 📄 tenth.html           ← Class 10 / Matriculation
+├── 📄 intermediate.html    ← 11th & 12th / Intermediate
+├── 📄 graduation.html      ← Graduation Courses
+├── 📄 skills.html          ← Skills Roadmaps
+├── 📄 contact.html         ← Contact & Social Links
+├── 📄 support.html         ← Support the Project
 │
-├── 🎨 style.css           # All shared styles
-├── 🗃️  data.js             # All chapters & roadmap data
-├── ⚙️  app.js              # App logic & navigation
-├── 🤖 ai.js               # Batman AI chat system
-└── ✨ effects.js           # 3D effects, themes, particles
+├── 🎨 style.css            ← All shared styles & themes
+├── 🗃️  data.js              ← Chapters, roadmaps, all data
+├── ⚙️  app.js               ← App logic & page navigation
+├── 🤖 ai.js                ← Batman AI chat engine
+└── ✨ effects.js            ← 3D canvas, particles, themes
 ```
 
 ---
@@ -113,61 +107,88 @@ study-trackerr/
 ## 📚 Supported Courses
 
 <details>
-<summary><b>🏫 Class 10 — Matriculation</b></summary>
+<summary><b>🏫 Class 10 — Matriculation &nbsp;(click to expand)</b></summary>
+<br/>
 
-- Mathematics
-- Science
-- Social Science
-- English
-- Hindi
-- Sanskrit
-- Information Technology (IT)
-
-</details>
-
-<details>
-<summary><b>📗 Class 11 & 12 — Intermediate</b></summary>
-
-**Science Stream**
-- Physics · Chemistry · Mathematics · Biology
-
-**Commerce Stream**
-- Accountancy · Business Studies · Economics · Maths (Commerce) · English
-
-**Arts / Humanities**
-- History · Geography · Political Science · Economics · Sociology · Psychology · English
+| Subject | Chapters |
+|---------|----------|
+| 📐 Mathematics | 14 Chapters |
+| 🔬 Science | 13 Chapters |
+| 🌍 Social Science | 25 Chapters |
+| 📝 English | Literature + Grammar |
+| 🗣️ Hindi | Full syllabus |
+| 🕉️ Sanskrit | Full syllabus |
+| 💻 IT | Full syllabus |
 
 </details>
 
 <details>
-<summary><b>🎓 Graduation</b></summary>
+<summary><b>📗 Class 11 & 12 — Intermediate &nbsp;(click to expand)</b></summary>
+<br/>
 
-| Course | Branches |
-|--------|----------|
-| **B.Tech** | CSE · ECE · Mechanical · Civil · EEE · IT · AI & Data Science |
-| **BCA** | General |
-| **BSc** | CS · Physics · Chemistry · Maths · Biology |
-| **BCom** | General · Honours |
-| **BA** | History · Geography · Pol. Science · Economics · Sociology · Psychology |
-| **BBA** | General |
+**🔬 Science Stream**
+`Physics` · `Chemistry` · `Mathematics` · `Biology`
+
+**💼 Commerce Stream**
+`Accountancy` · `Business Studies` · `Economics` · `Maths` · `English`
+
+**🎨 Arts / Humanities**
+`History` · `Geography` · `Political Science` · `Economics` · `Sociology` · `Psychology` · `English`
 
 </details>
 
 <details>
-<summary><b>💡 Skills Roadmaps</b></summary>
+<summary><b>🎓 Graduation &nbsp;(click to expand)</b></summary>
+<br/>
 
-- 🌐 Frontend Development (HTML → CSS → JS → React → Next.js)
-- ⚙️ Backend Development (Node.js → Express → Databases → Auth)
-- 🔗 Full Stack Development (MERN Stack)
-- 🧩 DSA & Competitive Programming
-- 🎬 Video Editing (CapCut → Premiere → DaVinci → After Effects)
-- 🔐 Cybersecurity & Ethical Hacking
+| Course | Branches / Streams |
+|--------|--------------------|
+| 🖥️ **B.Tech** | CSE · ECE · Mechanical · Civil · EEE · IT · AI & Data Science |
+| 🧑‍💻 **BCA** | General |
+| 🔭 **BSc** | CS · Physics · Chemistry · Maths · Biology |
+| 💰 **BCom** | General · Honours |
+| 📖 **BA** | History · Geography · Pol. Science · Economics · Sociology · Psychology |
+| 📊 **BBA** | General |
+
+</details>
+
+<details>
+<summary><b>💡 Skills Roadmaps &nbsp;(click to expand)</b></summary>
+<br/>
+
+| Roadmap | Path |
+|---------|------|
+| 🌐 **Frontend Dev** | HTML → CSS → JS → React → Next.js |
+| ⚙️ **Backend Dev** | Node.js → Express → DB → Auth → Deploy |
+| 🔗 **Full Stack** | MERN Stack end-to-end |
+| 🧩 **DSA & CP** | Arrays → Trees → Graphs → DP |
+| 🎬 **Video Editing** | CapCut → Premiere → DaVinci → After Effects |
+| 🔐 **Cybersecurity** | Networking → Linux → Ethical Hacking → CTF |
 
 </details>
 
 ---
 
+## 🚀 Deploy Your Own
+
+```bash
+# Clone the repo
+git clone https://github.com/k4hav/study-trackerr.git
+cd study-trackerr
+
+# Open locally — no server needed!
+open index.html
+```
+
+**Or deploy instantly on Vercel:**
+
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/k4hav/study-trackerr)
+
+---
+
 ## 🛠️ Built With
+
+<div align="center">
 
 ![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=flat-square&logo=html5&logoColor=white)
 ![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=flat-square&logo=css3&logoColor=white)
@@ -176,49 +197,59 @@ study-trackerr/
 ![Three.js](https://img.shields.io/badge/Three.js-000000?style=flat-square&logo=three.js&logoColor=white)
 ![Vercel](https://img.shields.io/badge/Vercel-000000?style=flat-square&logo=vercel&logoColor=white)
 
+</div>
+
 ---
 
 ## 🤝 Contributing
 
-Contributions are welcome! If you want to add chapters, fix bugs, or improve UI:
+Got a bug fix, new subject, or UI improvement? PRs are welcome!
 
-1. Fork the repo
-2. Create your branch: `git checkout -b feature/your-feature`
-3. Commit your changes: `git commit -m 'Add some feature'`
-4. Push to the branch: `git push origin feature/your-feature`
-5. Open a Pull Request
+```
+1. Fork this repo
+2. git checkout -b feature/my-feature
+3. git commit -m "feat: add my feature"
+4. git push origin feature/my-feature
+5. Open a Pull Request 🚀
+```
 
-Please read [CONTRIBUTING.md](CONTRIBUTING.md) before contributing.
+Read [CONTRIBUTING.md](CONTRIBUTING.md) for guidelines.
 
 ---
 
-## 📬 Connect with Me
+## 📬 Connect
 
 <div align="center">
 
-[![GitHub](https://img.shields.io/badge/GitHub-k4hav-181717?style=for-the-badge&logo=github)](https://github.com/k4hav)
-[![X](https://img.shields.io/badge/X-@k4hav-000000?style=for-the-badge&logo=x)](https://x.com/k4hav)
-[![Instagram](https://img.shields.io/badge/Instagram-@k4hav-E4405F?style=for-the-badge&logo=instagram)](https://www.instagram.com/k4hav)
-[![Telegram](https://img.shields.io/badge/Telegram-@k4hav-2CA5E0?style=for-the-badge&logo=telegram)](https://t.me/k4hav)
+[![GitHub](https://img.shields.io/badge/GitHub-%40k4hav-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/k4hav)
+[![X / Twitter](https://img.shields.io/badge/X-%40k4hav-000000?style=for-the-badge&logo=x&logoColor=white)](https://x.com/k4hav)
+[![Instagram](https://img.shields.io/badge/Instagram-%40k4hav-E4405F?style=for-the-badge&logo=instagram&logoColor=white)](https://www.instagram.com/k4hav)
+[![Telegram](https://img.shields.io/badge/Telegram-%40k4hav-2CA5E0?style=for-the-badge&logo=telegram&logoColor=white)](https://t.me/k4hav)
 
 </div>
 
 ---
 
-## ❤️ Support
+## ❤️ Support the Project
 
-Agar yeh project tumhare kaam aaya, toh ek ☕ chai ki keemat pe support karo!
+Agar yeh kaam aaya toh ek chai ☕ ki keemat pe support karo!
 
-**UPI ID:** `itskeshav@upi`
-
-> _"Study hard in silence, let your results make the noise."_ 📚
+```
+UPI ID →  itskeshav@upi
+```
 
 ---
 
 <div align="center">
 
+*"Study hard in silence. Let your results make the noise."*
+
+<br/>
+
 **Copyright © 2026 ƘҽՏհɑѵ · All Rights Reserved**
 
-⭐ Star this repo if you found it helpful!
+<br/>
+
+⭐ **Star this repo if it helped you!** ⭐
 
 </div>
