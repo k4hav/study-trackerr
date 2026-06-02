@@ -1,15 +1,7 @@
 <div align="center">
 
-<br/>
 
-```
-██╗  ██╗ ██╗  ██╗ █████╗ ██╗   ██╗
-██║ ██╔╝ ██║  ██║██╔══██╗██║   ██║
-█████╔╝  ███████║███████║██║   ██║
-██╔═██╗  ╚════██║██╔══██║╚██╗ ██╔╝
-██║  ██╗      ██║██║  ██║ ╚████╔╝
-╚═╝  ╚═╝      ╚═╝╚═╝  ╚═╝  ╚═══╝
-```
+
 
 ### 📚 **Study Tracker** — *by k4hav*
 #### *Track · Learn · Excel — Class 10 to Graduation*
@@ -230,13 +222,6 @@ Read [CONTRIBUTING.md](CONTRIBUTING.md) for guidelines.
 
 ---
 
-## ❤️ Support the Project
-
-Agar yeh kaam aaya toh ek chai ☕ ki keemat pe support karo!
-
-```
-UPI ID →  itskeshav@upi
-```
 
 ---
 
