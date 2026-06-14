@@ -24,13 +24,13 @@
         'page-support':       'support.html',
     };
 
-    // Internal page switching (within same HTML file)
-    function _showSection(pageId, data) {
+    // Cross-page navigation (redirects to another HTML file if needed)
+    function showPage(pageId, data) {
         const currentFile = window.location.pathname.split('/').pop() || 'index.html';
         const targetFile = PAGE_MAP[pageId] || 'index.html';
 
-        // If same page file, switch internal section
-        if (targetFile === currentFile || targetFile === currentFile.replace('.html','') ) {
+        // If same page file, switch internal section directly
+        if (targetFile === currentFile || (currentFile === '' && targetFile === 'index.html')) {
             _showSection(pageId, data);
             return;
         }
@@ -40,6 +40,7 @@
         window.location.href = targetFile;
     }
 
+    // Internal page switching (within same HTML file)
     function _showSection(pageId, data) {
         document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
         const el = document.getElementById(pageId);
