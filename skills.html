@@ -398,7 +398,7 @@ document.addEventListener('DOMContentLoaded', function() {
         document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
         document.getElementById('page-cyber').classList.add('active');
       } else if (d.pageId === 'page-roadmap' && d.data) {
-        openRoadmap(d.data);
+        showRoadmap(d.data);
       }
     } catch(e) { sessionStorage.removeItem('navData'); }
   }
